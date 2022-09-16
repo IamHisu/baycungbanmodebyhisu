@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+</head>
+<body>
+    <div class="app">
+        <header class="app__header">
+            <div class="grid wide father-nav">
+                <div class="row">
+                    <div class="col l-0 m-1 c-1">
+                        <i class="ti-menu menu-icon menu-btn"></i>
+                    </div>       
+                    <div class="col l-3 m-5 c-5 logo">
+                        <a class="no-effect tab-item active" style="cursor: pointer;">
+                            <span class="hide-on-low-mobile">Baycungban</span>
+                            <i class="ti-home show-on-low-mobile home-icon" style="cursor: pointer; font-weight: 700; margin-left: 10px;"></i>
+                        </a>
+                        <div style="display: inline-block">
+                            <img src="https://cdn.countryflags.com/thumbs/vietnam/flag-round-250.png" alt="vietnamese" class="language">
+                            <img src="https://karennews.org/wp-content/uploads/2013/02/usa-flag.gif" alt="english" class="language">
+                        </div>
+                    </div>
+                    
+                    <div class="col l-6 hide-on-mobile-tablet nav">
+                        <ul class="tabs">
+                            <li class="tab-item">Promotion</li>
+                            <li class="tab-item">Flight Schedule</li>
+                            <li class="tab-item">About us</li>
+                            <li class="tab-item">Payment Guide</li>
+                        </ul>
+                    </div>
+
+                    <div class="col l-3 m-6 c-6 bookingNow">
+                        <p class="error-btn">Booking now</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="app__container tab-pane active">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-4 m-6 m-o-1 c-10 c-o-2 slogan">
+                        <h1>Hello!<br/> Where are you <span>flying</span> to...</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col l-12 m-12 c-12 content">
+                        <div class="grid">
+                            <div class="row about">
+                                <div>
+                                    <p class="about-mg">
+                                        <input type="radio" name="chose1">One way/Round-trip 
+                                        <input type="radio" name="chose1">Multi city
+                                    </p>
+                                </div>
+                                <div style="display: flex; margin-left: 20px;">
+                                    <p class="about-mg error-btn" style="cursor: pointer;"><span style="color:var(--primary-color);">02</span> Adult, <span style="color: var(--primary-color);">01</span> children</p>
+                                    <select>
+                                        <option style="font-size: 1.6rem;">Economy</option>
+                                        <option style="font-size: 1.6rem;">Premium Economy</option>
+                                        <option style="font-size: 1.6rem;">Business</option>
+                                        <option style="font-size: 1.6rem;">First Class</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row detail" style="margin: 10px 0 40px;">
+                                <div class="col l-6 m-12 c-12">
+                                    <div class="row from-to">
+                                        <div class="col l-5 m-5 c-5" id="from">
+                                            <p style="color: #777;">FROM</p>
+                                            <div class="dropdown">
+                                                <input type="text" class="fromPlace" placeholder="Select place" readonly>
+                                                <div class="option">
+                                                    <div onclick="showFromPlace('DA NANG &#40DND&#41')"><h3>DA NANG</h3><p>Da Nang Airport</p></div>
+                                                    <div onclick="showFromPlace('HO CHI MINH &#40SGN&#41')"><h3>HO CHI MINH</h3><p>Tansonnhat Intl</p></div>
+                                                    <div onclick="showFromPlace('HA NOI &#40HAN&#41')"><h3>HA NOI</h3><p>Noibai Intl</p></div>
+                                                    <div onclick="showFromPlace('DA LAT &#40DLI&#41')"><h3>DA LAT</h3><p>Dalat Airport</p></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="border:none; transform:rotate(90deg); box-shadow: none;"><i class="ti-exchange-vertical exchange-btn" style=
+                                        "font-size: 2.4rem; line-height: 50px; cursor: pointer;"></i></div>
+                                        <div class="col l-5 m-5 c-5" id="to">
+                                            <p style="color: #777;">TO</p>
+                                            <div class="dropdown">
+                                                <input type="text" class="toPlace" placeholder="Select place" readonly>
+                                                <div class="option">
+                                                    <div onclick="showToPlace('DA NANG &#40DND&#41')"><h3>DA NANG</h3><p>Da Nang Airport</p></div>
+                                                    <div onclick="showToPlace('HO CHI MINH &#40SGN&#41')"><h3>HO CHI MINH</h3><p>Tansonnhat Intl</p></div>
+                                                    <div onclick="showToPlace('HA NOI &#40HAN&#41')"><h3>HA NOI</h3><p>Noibai Intl</p></div>
+                                                    <div onclick="showToPlace('DA LAT &#40DLI&#41')"><h3>DA LAT</h3><p>Dalat Airport</p></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col l-6 m-12 c-12">
+                                    <div class="row days">
+                                        <div class="col l-6 m-6 c-6">
+                                            <p style="color: #777;">DEPARTURE DAY</p>
+                                            <input type="date" max="2023-1-1" class="departureDay">
+                                        </div>
+                                        <div class="col l-6 m-6 c-6">
+                                            <p style="color: #777;">RETURN DAY</p>
+                                            <input type="date" max="2023-1-1" class="returnDay">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-btn">
+                            <p>Search Flights&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <i class="ti-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="promotion-container tab-pane" style="height: calc(100vh - 60px); background-color: rgb(255, 183, 0);">
+            <div class="grid wide">
+                <div class="row" style="text-align: center;">
+                    <div class="col l-10 l-o-1 m-12 c-12 promotion">
+                        <h3>Hiện tại không có chương trình khuyến mãi!!<br/>Quý khách vui lòng quay lại sau.</h3>
+                        <p>&#40 Trên cuộc đời này có làm thì mới có ăn. Không làm mà muốn có ăn thì.. thuê đầu bếp về nấu cho ăn nha! &#41</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flight-schedule-container tab-pane">
+            <div class="flight-schedule-header">
+                <div class="grid wide">
+                    <div class="row flight-schedule-sub-cont" style="align-items: center;">
+                        <div class="col l-10 m-10 c-10">
+                            <div class="row"style="align-items: center;">
+                                <div class="col l-6 flight-schedule-inf">
+                                    <div class="row">
+                                        <div class="col 1-5 from-value-fake">
+                                            <h3 style="width:143px;">Da Nang (DND)</h3>
+                                            <p>Fri, 22 Mar, 2022</p>
+                                        </div>
+                                        <div class="exchange-fake-btn" style="display: flex; width: 20%; text-align:center; padding:10px 0;
+                                        justify-content: center; font-size: 1.6rem;border-radius: 10px;">
+                                            <i class="ti-back-right" style="font-weight: 600;"></i> <i class="ti-back-left" style="font-weight: 600;"></i>
+                                        </div>
+                                        <div class="col 1-5 to-value-fake">
+                                            <h3>Ho Chi Minh (SGN)</h3>
+                                            <p>Fri, 22 Mar, 2022</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col l-6 flight-schedule-about" style="display: flex;">
+                                        <div class="error-btn">Round-trip</div>
+                                        <div class="error-btn">02 Adult, 01 children</div>
+                                        <div class="error-btn">Business Class</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col l-2 m-2 c-2 flight-schedule-searchbtn" style="display: flex;justify-content: flex-end;">
+                            <div><p class="error-btn">Change Fights <i class="ti-search"></i></p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flight-schedule-body">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-9 m-12">
+                            <div class="row nav">
+                                <div class="col l-9 l-o-3">
+                                    <p style="text-align: right ;"><b>FILTER</b></p>
+                                    <p style="position:relative; cursor: pointer;" class="error-btn">Transit <i class="ti-angle-down" style="font-size:.8rem;position: absolute; right: 15px; top: 10px;"></i></p>
+                                    <p style="position:relative; cursor: pointer;" class="error-btn">Time <i class="ti-angle-down" style="font-size:.8rem;position: absolute; right: 15px; top: 10px;"></i></p>
+                                    <p style="position:relative; cursor: pointer;" class="error-btn">Airline <i class="ti-angle-down" style="font-size:.8rem;position: absolute; right: 15px; top: 10px;"></i></p>
+                                    <p style="position:relative; cursor: pointer;" class="error-btn">Low Price <i class="ti-angle-down" style="font-size:.8rem;position: absolute; right: 15px; top: 10px;"></i></p>
+                                </div>
+                            </div>
+                            <div class="row flight-schedule-content">
+                                <div class="col l-3 airlines">
+                                    <img src="./assets/img/vnairline-logo.png" alt="vnAirline">
+                                    <p>VIETNAM AIRLINES</p>
+                                </div>
+                                <div class="col l-3 time">
+                                    <div><p>21:40</p><span>DAD</span></div>
+                                    <div><p>1h 30m</p><span>Direct</span></div>
+                                    <div><p>21:40</p><span>SGN</span></div>
+                                </div>
+                                <div class="col l-2 luggage">
+                                    <p><i class="ti-bag"></i> Baggage <span>20kg</span></p>
+                                    <p><i class="ti-heart"></i> In-flight <span>Meal</span></p>
+                                </div>
+                                <div class="col l-2 price">
+                                    <p>1,326,000 vnd</p>
+                                    <p>1,322,000 vnd</p>
+                                </div>
+                                <div class="col l-2 choose-btn">
+                                    <p class="error-btn">Choose</p>
+                                </div>
+                                <div class="col l-12 details">
+                                    <div class="detail-tab active">FLIGHT DETAIL</div>
+                                    <div class="detail-tab">FARE INFO</div>
+                                </div>
+                                <div class="col l-12 detail-item active">
+                                    <div class="row">
+                                        <div class="col l-5 detail-item-time">
+                                            <div>
+                                                <p>
+                                                    21:40<br/><span>11feb</span>
+                                                    <br/><br/><br/><span>1h 30m</span>
+                                                    <br/><br/><br/>23:10<br/>
+                                                    <span>11feb</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    Da nang (DND)<br/><span>Da nang Airport</span>
+                                                    <br/><br/><br/><br/><br/><br/>Ho Chi Minh City (SGN)<br/>
+                                                    <span>Tansonnhat Inlt</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col l-7 detail-item-more">
+                                            <div>
+                                                <img src="./assets/img/vnairline-logo.png" alt="">
+                                                <p>
+                                                    VIETNAM AIRLINES<br/><span>QH-183 • Economy</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    <p>
+                                                        Baggage <span>20kg</span><br/>
+                                                        In-flight <span>Meal</span><br/>
+                                                        In-flight <span>Entertaiment</span>
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <p>
+                                                        Aircraft <span>Airbus A321</span><br/>
+                                                        Seat layout <span>3-3</span><br/>
+                                                        Seat pitch <span>29 inches (standard)</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col l-12 detail-item">
+                                    <div class="row">
+                                        <div class="col l-5 detail-item-conditions">
+                                            <div>
+                                                <p>CONDITIONS</p>
+                                            </div>
+                                            <div>
+                                                <img src="./assets/img/vnairline-logo.png" alt="">
+                                                <p>
+                                                    VIETNAM AIRLINES<br/><span>QH-183 • Economy</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>Da Nang &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 
+                                                    Ho Chi Minh City<br/><span>Economy</span></p>
+                                            </div>
+                                            <div>
+                                                <p>Non-Refundable</p>
+                                            </div>
+                                        </div>
+                                        <div class="col l-7 detail-item-price">
+                                            <div>
+                                                <p style="font-size: 1.3rem;"><b>PRICES DETAILS</b></p>
+                                            </div>
+                                            <div style="font-size: 1.3rem;">
+                                                <p>
+                                                    Adult Basic Fare (x1)<br/>
+                                                    Tax<br/>
+                                                    Regular Total Price<br/>
+                                                    <span style="color:var(--secondary-color)">Save</span><br/><br/>
+                                                    You pay
+                                                </p>
+                                                <p>
+                                                    <b>1,326,000 vnd</b><br/>
+                                                    included<br/>
+                                                    1,326,000 vnd<br/>
+                                                    <span>-4,000 vnd</span><br/><br/>
+                                                    <span style="color:var(--secondary-color)"><b>1,322,000 vnd</b></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+
+                            <div class="row flight-schedule-content">
+                                <div class="col l-3 airlines">
+                                    <img src="./assets/img/bambo-logo.jpg" alt="bamboo">
+                                    <p>BAMBOO AIRWAYS</p>
+                                </div>
+                                <div class="col l-3 time">
+                                    <div><p>21:40</p><span>DAD</span></div>
+                                    <div><p>1h 30m</p><span>Direct</span></div>
+                                    <div><p>21:40</p><span>SGN</span></div>
+                                </div>
+                                <div class="col l-2 luggage">
+                                    <p><i class="ti-bag"></i> Baggage <span>20kg</span></p>
+                                    <p><i class="ti-heart"></i> In-flight <span>Meal</span></p>
+                                </div>
+                                <div class="col l-2 price">
+                                    <p>1,326,000 vnd</p>
+                                    <p>1,322,000 vnd</p>
+                                </div>
+                                <div class="col l-2 choose-btn">
+                                    <p class="error-btn">Choose</p>
+                                </div>
+                                <div class="col l-12 details">
+                                    <div class="detail-tab">FLIGHT DETAIL</div>
+                                    <div class="detail-tab">FARE INFO</div>
+                                </div>
+                                <div class="col l-12 detail-item">
+                                    <div class="row">
+                                        <div class="col l-5 detail-item-time">
+                                            <div>
+                                                <p>
+                                                    21:40<br/><span>11feb</span>
+                                                    <br/><br/><br/><span>1h 30m</span>
+                                                    <br/><br/><br/>23:10<br/>
+                                                    <span>11feb</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    Da nang (DND)<br/><span>Da nang Airport</span>
+                                                    <br/><br/><br/><br/><br/><br/>Ho Chi Minh City (SGN)<br/>
+                                                    <span>Tansonnhat Inlt</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col l-7 detail-item-more">
+                                            <div>
+                                                <img src="./assets/img/bambo-logo.jpg" alt="bamboo">
+                                                <p>
+                                                    BAMBOO AIRWAYS<br/><span>QH-183 • Economy</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    <p>
+                                                        Baggage <span>20kg</span><br/>
+                                                        In-flight <span>Meal</span><br/>
+                                                        In-flight <span>Entertaiment</span>
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <p>
+                                                        Aircraft <span>Airbus A321</span><br/>
+                                                        Seat layout <span>3-3</span><br/>
+                                                        Seat pitch <span>29 inches (standard)</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col l-12 detail-item">
+                                    <div class="row">
+                                        <div class="col l-5 detail-item-conditions">
+                                            <div>
+                                                <p>CONDITIONS</p>
+                                            </div>
+                                            <div>
+                                                <img src="./assets/img/bambo-logo.jpg" alt="bamboo">
+                                                <p>
+                                                    BAMBOO AIRWAYS<br/><span>QH-183 • Economy</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>Da Nang &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 
+                                                    Ho Chi Minh City<br/><span>Economy</span></p>
+                                            </div>
+                                            <div>
+                                                <p>Non-Refundable</p>
+                                            </div>
+                                        </div>
+                                        <div class="col l-7 detail-item-price">
+                                            <div>
+                                                <p style="font-size: 1.3rem;"><b>PRICES DETAILS</b></p>
+                                            </div>
+                                            <div style="font-size: 1.3rem;">
+                                                <p>
+                                                    Adult Basic Fare (x1)<br/>
+                                                    Tax<br/>
+                                                    Regular Total Price<br/>
+                                                    <span style="color:var(--secondary-color)">Save</span><br/><br/>
+                                                    You pay
+                                                </p>
+                                                <p>
+                                                    <b>1,326,000 vnd</b><br/>
+                                                    included<br/>
+                                                    1,326,000 vnd<br/>
+                                                    <span>-4,000 vnd</span><br/><br/>
+                                                    <span style="color:var(--secondary-color)"><b>1,322,000 vnd</b></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+
+                            <div class="row flight-schedule-content">
+                                <div class="col l-3 airlines">
+                                    <img src="./assets/img/vnairline-logo.png" alt="vnAirline">
+                                    <p>VIETNAM AIRLINES</p>
+                                </div>
+                                <div class="col l-3 time">
+                                    <div><p>21:40</p><span>DAD</span></div>
+                                    <div><p>1h 30m</p><span>Direct</span></div>
+                                    <div><p>21:40</p><span>SGN</span></div>
+                                </div>
+                                <div class="col l-2 luggage">
+                                    <p><i class="ti-bag"></i> Baggage <span>20kg</span></p>
+                                    <p><i class="ti-heart"></i> In-flight <span>Meal</span></p>
+                                </div>
+                                <div class="col l-2 price">
+                                    <p>1,326,000 vnd</p>
+                                    <p>1,322,000 vnd</p>
+                                </div>
+                                <div class="col l-2 choose-btn">
+                                    <p class="error-btn">Choose</p>
+                                </div>
+                                <div class="col l-12 details">
+                                    <div class="detail-tab">FLIGHT DETAIL</div>
+                                    <div class="detail-tab">FARE INFO</div>
+                                </div>
+                                <div class="col l-12 detail-item">
+                                    <div class="row">
+                                        <div class="col l-5 detail-item-time">
+                                            <div>
+                                                <p>
+                                                    21:40<br/><span>11feb</span>
+                                                    <br/><br/><br/><span>1h 30m</span>
+                                                    <br/><br/><br/>23:10<br/>
+                                                    <span>11feb</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    Da nang (DND)<br/><span>Da nang Airport</span>
+                                                    <br/><br/><br/><br/><br/><br/>Ho Chi Minh City (SGN)<br/>
+                                                    <span>Tansonnhat Inlt</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col l-7 detail-item-more">
+                                            <div>
+                                                <img src="./assets/img/vnairline-logo.png" alt="">
+                                                <p>
+                                                    VIETNAM AIRLINES<br/><span>QH-183 • Economy</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    <p>
+                                                        Baggage <span>20kg</span><br/>
+                                                        In-flight <span>Meal</span><br/>
+                                                        In-flight <span>Entertaiment</span>
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <p>
+                                                        Aircraft <span>Airbus A321</span><br/>
+                                                        Seat layout <span>3-3</span><br/>
+                                                        Seat pitch <span>29 inches (standard)</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col l-12 detail-item">
+                                    <div class="row">
+                                        <div class="col l-5 detail-item-conditions">
+                                            <div>
+                                                <p>CONDITIONS</p>
+                                            </div>
+                                            <div>
+                                                <img src="./assets/img/vnairline-logo.png" alt="">
+                                                <p>
+                                                    VIETNAM AIRLINES<br/><span>QH-183 • Economy</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>Da Nang &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 
+                                                    Ho Chi Minh City<br/><span>Economy</span></p>
+                                            </div>
+                                            <div>
+                                                <p>Non-Refundable</p>
+                                            </div>
+                                        </div>
+                                        <div class="col l-7 detail-item-price">
+                                            <div>
+                                                <p style="font-size: 1.3rem;"><b>PRICES DETAILS</b></p>
+                                            </div>
+                                            <div style="font-size: 1.3rem;">
+                                                <p>
+                                                    Adult Basic Fare (x1)<br/>
+                                                    Tax<br/>
+                                                    Regular Total Price<br/>
+                                                    <span style="color:var(--secondary-color)">Save</span><br/><br/>
+                                                    You pay
+                                                </p>
+                                                <p>
+                                                    <b>1,326,000 vnd</b><br/>
+                                                    included<br/>
+                                                    1,326,000 vnd<br/>
+                                                    <span>-4,000 vnd</span><br/><br/>
+                                                    <span style="color:var(--secondary-color)"><b>1,322,000 vnd</b></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+
+                            <div class="row flight-schedule-content">
+                                <div class="col l-3 airlines">
+                                    <img src="./assets/img/vnairline-logo.png" alt="vnAirline">
+                                    <p>VIETNAM AIRLINES</p>
+                                </div>
+                                <div class="col l-3 time">
+                                    <div><p>21:40</p><span>DAD</span></div>
+                                    <div><p>1h 30m</p><span>Direct</span></div>
+                                    <div><p>21:40</p><span>SGN</span></div>
+                                </div>
+                                <div class="col l-2 luggage">
+                                    <p><i class="ti-bag"></i> Baggage <span>20kg</span></p>
+                                    <p><i class="ti-heart"></i> In-flight <span>Meal</span></p>
+                                </div>
+                                <div class="col l-2 price">
+                                    <p>1,326,000 vnd</p>
+                                    <p>1,322,000 vnd</p>
+                                </div>
+                                <div class="col l-2 choose-btn">
+                                    <p class="error-btn">Choose</p>
+                                </div>
+                                <div class="col l-12 details">
+                                    <div class="detail-tab">FLIGHT DETAIL</div>
+                                    <div class="detail-tab">FARE INFO</div>
+                                </div>
+                                <div class="col l-12 detail-item">
+                                    <div class="row">
+                                        <div class="col l-5 detail-item-time">
+                                            <div>
+                                                <p>
+                                                    21:40<br/><span>11feb</span>
+                                                    <br/><br/><br/><span>1h 30m</span>
+                                                    <br/><br/><br/>23:10<br/>
+                                                    <span>11feb</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    Da nang (DND)<br/><span>Da nang Airport</span>
+                                                    <br/><br/><br/><br/><br/><br/>Ho Chi Minh City (SGN)<br/>
+                                                    <span>Tansonnhat Inlt</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col l-7 detail-item-more">
+                                            <div>
+                                                <img src="./assets/img/vnairline-logo.png" alt="">
+                                                <p>
+                                                    VIETNAM AIRLINES<br/><span>QH-183 • Economy</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    <p>
+                                                        Baggage <span>20kg</span><br/>
+                                                        In-flight <span>Meal</span><br/>
+                                                        In-flight <span>Entertaiment</span>
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <p>
+                                                        Aircraft <span>Airbus A321</span><br/>
+                                                        Seat layout <span>3-3</span><br/>
+                                                        Seat pitch <span>29 inches (standard)</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col l-12 detail-item">
+                                    <div class="row">
+                                        <div class="col l-5 detail-item-conditions">
+                                            <div>
+                                                <p>CONDITIONS</p>
+                                            </div>
+                                            <div>
+                                                <img src="./assets/img/vnairline-logo.png" alt="">
+                                                <p>
+                                                    VIETNAM AIRLINES<br/><span>QH-183 • Economy</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>Da Nang &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 
+                                                    Ho Chi Minh City<br/><span>Economy</span></p>
+                                            </div>
+                                            <div>
+                                                <p>Non-Refundable</p>
+                                            </div>
+                                        </div>
+                                        <div class="col l-7 detail-item-price">
+                                            <div>
+                                                <p style="font-size: 1.3rem;"><b>PRICES DETAILS</b></p>
+                                            </div>
+                                            <div style="font-size: 1.3rem;">
+                                                <p>
+                                                    Adult Basic Fare (x1)<br/>
+                                                    Tax<br/>
+                                                    Regular Total Price<br/>
+                                                    <span style="color:var(--secondary-color)">Save</span><br/><br/>
+                                                    You pay
+                                                </p>
+                                                <p>
+                                                    <b>1,326,000 vnd</b><br/>
+                                                    included<br/>
+                                                    1,326,000 vnd<br/>
+                                                    <span>-4,000 vnd</span><br/><br/>
+                                                    <span style="color:var(--secondary-color)"><b>1,322,000 vnd</b></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+
+                            <div class="row flight-schedule-content">
+                                <div class="col l-3 airlines">
+                                    <img src="./assets/img/bambo-logo.jpg" alt="bamboo">
+                                    <p>BAMBOO AIRWAYS</p>
+                                </div>
+                                <div class="col l-3 time">
+                                    <div><p>21:40</p><span>DAD</span></div>
+                                    <div><p>1h 30m</p><span>Direct</span></div>
+                                    <div><p>21:40</p><span>SGN</span></div>
+                                </div>
+                                <div class="col l-2 luggage">
+                                    <p><i class="ti-bag"></i> Baggage <span>20kg</span></p>
+                                    <p><i class="ti-heart"></i> In-flight <span>Meal</span></p>
+                                </div>
+                                <div class="col l-2 price">
+                                    <p>1,326,000 vnd</p>
+                                    <p>1,322,000 vnd</p>
+                                </div>
+                                <div class="col l-2 choose-btn">
+                                    <p class="error-btn">Choose</p>
+                                </div>
+                                <div class="col l-12 details">
+                                    <div class="detail-tab">FLIGHT DETAIL</div>
+                                    <div class="detail-tab">FARE INFO</div>
+                                </div>
+                                <div class="col l-12 detail-item">
+                                    <div class="row">
+                                        <div class="col l-5 detail-item-time">
+                                            <div>
+                                                <p>
+                                                    21:40<br/><span>11feb</span>
+                                                    <br/><br/><br/><span>1h 30m</span>
+                                                    <br/><br/><br/>23:10<br/>
+                                                    <span>11feb</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    Da nang (DND)<br/><span>Da nang Airport</span>
+                                                    <br/><br/><br/><br/><br/><br/>Ho Chi Minh City (SGN)<br/>
+                                                    <span>Tansonnhat Inlt</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col l-7 detail-item-more">
+                                            <div>
+                                                <img src="./assets/img/bambo-logo.jpg" alt="bamboo">
+                                                <p>
+                                                    BAMBOO AIRWAYS<br/><span>QH-183 • Economy</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    <p>
+                                                        Baggage <span>20kg</span><br/>
+                                                        In-flight <span>Meal</span><br/>
+                                                        In-flight <span>Entertaiment</span>
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <p>
+                                                        Aircraft <span>Airbus A321</span><br/>
+                                                        Seat layout <span>3-3</span><br/>
+                                                        Seat pitch <span>29 inches (standard)</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col l-12 detail-item">
+                                    <div class="row">
+                                        <div class="col l-5 detail-item-conditions">
+                                            <div>
+                                                <p>CONDITIONS</p>
+                                            </div>
+                                            <div>
+                                                <img src="./assets/img/bambo-logo.jpg" alt="bamboo">
+                                                <p>
+                                                    BAMBOO AIRWAYS<br/><span>QH-183 • Economy</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>Da Nang &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 
+                                                    Ho Chi Minh City<br/><span>Economy</span></p>
+                                            </div>
+                                            <div>
+                                                <p>Non-Refundable</p>
+                                            </div>
+                                        </div>
+                                        <div class="col l-7 detail-item-price">
+                                            <div>
+                                                <p style="font-size: 1.3rem;"><b>PRICES DETAILS</b></p>
+                                            </div>
+                                            <div style="font-size: 1.3rem;">
+                                                <p>
+                                                    Adult Basic Fare (x1)<br/>
+                                                    Tax<br/>
+                                                    Regular Total Price<br/>
+                                                    <span style="color:var(--secondary-color)">Save</span><br/><br/>
+                                                    You pay
+                                                </p>
+                                                <p>
+                                                    <b>1,326,000 vnd</b><br/>
+                                                    included<br/>
+                                                    1,326,000 vnd<br/>
+                                                    <span>-4,000 vnd</span><br/><br/>
+                                                    <span style="color:var(--secondary-color)"><b>1,322,000 vnd</b></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+
+                            <div class="row flight-schedule-content">
+                                <div class="col l-3 airlines">
+                                    <img src="./assets/img/vnairline-logo.png" alt="vnAirline">
+                                    <p>VIETNAM AIRLINES</p>
+                                </div>
+                                <div class="col l-3 time">
+                                    <div><p>21:40</p><span>DAD</span></div>
+                                    <div><p>1h 30m</p><span>Direct</span></div>
+                                    <div><p>21:40</p><span>SGN</span></div>
+                                </div>
+                                <div class="col l-2 luggage">
+                                    <p><i class="ti-bag"></i> Baggage <span>20kg</span></p>
+                                    <p><i class="ti-heart"></i> In-flight <span>Meal</span></p>
+                                </div>
+                                <div class="col l-2 price">
+                                    <p>1,326,000 vnd</p>
+                                    <p>1,322,000 vnd</p>
+                                </div>
+                                <div class="col l-2 choose-btn">
+                                    <p class="error-btn">Choose</p>
+                                </div>
+                                <div class="col l-12 details">
+                                    <div class="detail-tab">FLIGHT DETAIL</div>
+                                    <div class="detail-tab">FARE INFO</div>
+                                </div>
+                                <div class="col l-12 detail-item">
+                                    <div class="row">
+                                        <div class="col l-5 detail-item-time">
+                                            <div>
+                                                <p>
+                                                    21:40<br/><span>11feb</span>
+                                                    <br/><br/><br/><span>1h 30m</span>
+                                                    <br/><br/><br/>23:10<br/>
+                                                    <span>11feb</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    Da nang (DND)<br/><span>Da nang Airport</span>
+                                                    <br/><br/><br/><br/><br/><br/>Ho Chi Minh City (SGN)<br/>
+                                                    <span>Tansonnhat Inlt</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col l-7 detail-item-more">
+                                            <div>
+                                                <img src="./assets/img/vnairline-logo.png" alt="">
+                                                <p>
+                                                    VIETNAM AIRLINES<br/><span>QH-183 • Economy</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    <p>
+                                                        Baggage <span>20kg</span><br/>
+                                                        In-flight <span>Meal</span><br/>
+                                                        In-flight <span>Entertaiment</span>
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <p>
+                                                        Aircraft <span>Airbus A321</span><br/>
+                                                        Seat layout <span>3-3</span><br/>
+                                                        Seat pitch <span>29 inches (standard)</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col l-12 detail-item">
+                                    <div class="row">
+                                        <div class="col l-5 detail-item-conditions">
+                                            <div>
+                                                <p>CONDITIONS</p>
+                                            </div>
+                                            <div>
+                                                <img src="./assets/img/vnairline-logo.png" alt="">
+                                                <p>
+                                                    VIETNAM AIRLINES<br/><span>QH-183 • Economy</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>Da Nang &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 
+                                                    Ho Chi Minh City<br/><span>Economy</span></p>
+                                            </div>
+                                            <div>
+                                                <p>Non-Refundable</p>
+                                            </div>
+                                        </div>
+                                        <div class="col l-7 detail-item-price">
+                                            <div>
+                                                <p style="font-size: 1.3rem;"><b>PRICES DETAILS</b></p>
+                                            </div>
+                                            <div style="font-size: 1.3rem;">
+                                                <p>
+                                                    Adult Basic Fare (x1)<br/>
+                                                    Tax<br/>
+                                                    Regular Total Price<br/>
+                                                    <span style="color:var(--secondary-color)">Save</span><br/><br/>
+                                                    You pay
+                                                </p>
+                                                <p>
+                                                    <b>1,326,000 vnd</b><br/>
+                                                    included<br/>
+                                                    1,326,000 vnd<br/>
+                                                    <span>-4,000 vnd</span><br/><br/>
+                                                    <span style="color:var(--secondary-color)"><b>1,322,000 vnd</b></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+
+                            <div class="row flight-schedule-content">
+                                <div class="col l-3 airlines">
+                                    <img src="./assets/img/bambo-logo.jpg" alt="bamboo">
+                                    <p>BAMBOO AIRWAYS</p>
+                                </div>
+                                <div class="col l-3 time">
+                                    <div><p>21:40</p><span>DAD</span></div>
+                                    <div><p>1h 30m</p><span>Direct</span></div>
+                                    <div><p>21:40</p><span>SGN</span></div>
+                                </div>
+                                <div class="col l-2 luggage">
+                                    <p><i class="ti-bag"></i> Baggage <span>20kg</span></p>
+                                    <p><i class="ti-heart"></i> In-flight <span>Meal</span></p>
+                                </div>
+                                <div class="col l-2 price">
+                                    <p>1,326,000 vnd</p>
+                                    <p>1,322,000 vnd</p>
+                                </div>
+                                <div class="col l-2 choose-btn">
+                                    <p class="error-btn">Choose</p>
+                                </div>
+                                <div class="col l-12 details">
+                                    <div class="detail-tab">FLIGHT DETAIL</div>
+                                    <div class="detail-tab">FARE INFO</div>
+                                </div>
+                                <div class="col l-12 detail-item">
+                                    <div class="row">
+                                        <div class="col l-5 detail-item-time">
+                                            <div>
+                                                <p>
+                                                    21:40<br/><span>11feb</span>
+                                                    <br/><br/><br/><span>1h 30m</span>
+                                                    <br/><br/><br/>23:10<br/>
+                                                    <span>11feb</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    Da nang (DND)<br/><span>Da nang Airport</span>
+                                                    <br/><br/><br/><br/><br/><br/>Ho Chi Minh City (SGN)<br/>
+                                                    <span>Tansonnhat Inlt</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col l-7 detail-item-more">
+                                            <div>
+                                                <img src="./assets/img/bambo-logo.jpg" alt="bamboo">
+                                                <p>
+                                                    BAMBOO AIRWAYS<br/><span>QH-183 • Economy</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    <p>
+                                                        Baggage <span>20kg</span><br/>
+                                                        In-flight <span>Meal</span><br/>
+                                                        In-flight <span>Entertaiment</span>
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <p>
+                                                        Aircraft <span>Airbus A321</span><br/>
+                                                        Seat layout <span>3-3</span><br/>
+                                                        Seat pitch <span>29 inches (standard)</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col l-12 detail-item">
+                                    <div class="row">
+                                        <div class="col l-5 detail-item-conditions">
+                                            <div>
+                                                <p>CONDITIONS</p>
+                                            </div>
+                                            <div>
+                                                <img src="./assets/img/bambo-logo.jpg" alt="bamboo">
+                                                <p>
+                                                    BAMBOO AIRWAYS<br/><span>QH-183 • Economy</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>Da Nang &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 
+                                                    Ho Chi Minh City<br/><span>Economy</span></p>
+                                            </div>
+                                            <div>
+                                                <p>Non-Refundable</p>
+                                            </div>
+                                        </div>
+                                        <div class="col l-7 detail-item-price">
+                                            <div>
+                                                <p style="font-size: 1.3rem;"><b>PRICES DETAILS</b></p>
+                                            </div>
+                                            <div style="font-size: 1.3rem;">
+                                                <p>
+                                                    Adult Basic Fare (x1)<br/>
+                                                    Tax<br/>
+                                                    Regular Total Price<br/>
+                                                    <span style="color:var(--secondary-color)">Save</span><br/><br/>
+                                                    You pay
+                                                </p>
+                                                <p>
+                                                    <b>1,326,000 vnd</b><br/>
+                                                    included<br/>
+                                                    1,326,000 vnd<br/>
+                                                    <span>-4,000 vnd</span><br/><br/>
+                                                    <span style="color:var(--secondary-color)"><b>1,322,000 vnd</b></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+
+                            <div class="row flight-schedule-content">
+                                <div class="col l-3 airlines">
+                                    <img src="./assets/img/bambo-logo.jpg" alt="bamboo">
+                                    <p>BAMBOO AIRWAYS</p>
+                                </div>
+                                <div class="col l-3 time">
+                                    <div><p>21:40</p><span>DAD</span></div>
+                                    <div><p>1h 30m</p><span>Direct</span></div>
+                                    <div><p>21:40</p><span>SGN</span></div>
+                                </div>
+                                <div class="col l-2 luggage">
+                                    <p><i class="ti-bag"></i> Baggage <span>20kg</span></p>
+                                    <p><i class="ti-heart"></i> In-flight <span>Meal</span></p>
+                                </div>
+                                <div class="col l-2 price">
+                                    <p>1,326,000 vnd</p>
+                                    <p>1,322,000 vnd</p>
+                                </div>
+                                <div class="col l-2 choose-btn">
+                                    <p class="error-btn">Choose</p>
+                                </div>
+                                <div class="col l-12 details">
+                                    <div class="detail-tab">FLIGHT DETAIL</div>
+                                    <div class="detail-tab">FARE INFO</div>
+                                </div>
+                                <div class="col l-12 detail-item">
+                                    <div class="row">
+                                        <div class="col l-5 detail-item-time">
+                                            <div>
+                                                <p>
+                                                    21:40<br/><span>11feb</span>
+                                                    <br/><br/><br/><span>1h 30m</span>
+                                                    <br/><br/><br/>23:10<br/>
+                                                    <span>11feb</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    Da nang (DND)<br/><span>Da nang Airport</span>
+                                                    <br/><br/><br/><br/><br/><br/>Ho Chi Minh City (SGN)<br/>
+                                                    <span>Tansonnhat Inlt</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col l-7 detail-item-more">
+                                            <div>
+                                                <img src="./assets/img/bambo-logo.jpg" alt="bamboo">
+                                                <p>
+                                                    BAMBOO AIRWAYS<br/><span>QH-183 • Economy</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    <p>
+                                                        Baggage <span>20kg</span><br/>
+                                                        In-flight <span>Meal</span><br/>
+                                                        In-flight <span>Entertaiment</span>
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <p>
+                                                        Aircraft <span>Airbus A321</span><br/>
+                                                        Seat layout <span>3-3</span><br/>
+                                                        Seat pitch <span>29 inches (standard)</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col l-12 detail-item">
+                                    <div class="row">
+                                        <div class="col l-5 detail-item-conditions">
+                                            <div>
+                                                <p>CONDITIONS</p>
+                                            </div>
+                                            <div>
+                                                <img src="./assets/img/bambo-logo.jpg" alt="bamboo">
+                                                <p>
+                                                    BAMBOO AIRWAYS<br/><span>QH-183 • Economy</span>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>Da Nang &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 
+                                                    Ho Chi Minh City<br/><span>Economy</span></p>
+                                            </div>
+                                            <div>
+                                                <p>Non-Refundable</p>
+                                            </div>
+                                        </div>
+                                        <div class="col l-7 detail-item-price">
+                                            <div>
+                                                <p style="font-size: 1.3rem;"><b>PRICES DETAILS</b></p>
+                                            </div>
+                                            <div style="font-size: 1.3rem;">
+                                                <p>
+                                                    Adult Basic Fare (x1)<br/>
+                                                    Tax<br/>
+                                                    Regular Total Price<br/>
+                                                    <span style="color:var(--secondary-color)">Save</span><br/><br/>
+                                                    You pay
+                                                </p>
+                                                <p>
+                                                    <b>1,326,000 vnd</b><br/>
+                                                    included<br/>
+                                                    1,326,000 vnd<br/>
+                                                    <span>-4,000 vnd</span><br/><br/>
+                                                    <span style="color:var(--secondary-color)"><b>1,322,000 vnd</b></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col l-3 client-ticket" style="height: 320px">
+                            <div class="row">
+                                <p class="your-flight">YOUR FLIGHT</p>
+                            </div>
+                            <div class="row">
+
+                            </div>
+                            <div class="row">
+                                <div style="font-size: 1.4rem; display:inline-block; background-color: #777; border-radius: 50%; width: 30px;
+                                text-align: center;line-height: 30px; color: white; margin: 10px;">01</div>
+                                <div style="display: inline-block; margin-top: 10px; font-size: 1.3rem;">
+                                    <p>Sun, 13 Feb, 2022</p>
+                                    <p><b>Ho Chi Minh - Da Nang</b></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <img src="./assets/img/bambo-logo.jpg" alt="bamboo" style="width: 22px; border: 1px solid #ddd; border-radius: 5px; margin: 10px;">
+                                    <p style="margin-top:6px; font-size: 1.2rem; font-weight: 600;">
+                                        BAMBOO AIRWAYS<br/>
+                                        <span style="color:var(--primary-color); text-decoration: underline;">Detail</span>
+                                    </p>
+                            </div>
+                            <div class="row" style="margin:10px;">
+                                <div style="display:inline-block; text-align: center;">
+                                    <p style="font-size: 1.2rem; font-weight: 600;">
+                                        21:40<br/>
+                                        <span style="font-size:.9rem; font-weight: 500; background-color: rgb(216, 202, 235); border-radius: 6px;padding: 2px;">DAD</span>
+                                    </p>
+                                </div>
+                                <div style="display:inline-block; text-align: center;">
+                                    <p style="font-size: 1.2rem; border-bottom: 2px solid var(--primary-color); padding-right: 35px; padding-left: 35px;">1h 30m</p>
+                                    <p style="font-size:1rem">Direct</p>
+                                </div>
+                                <div style="display:inline-block; text-align: center;">
+                                    <p style="font-size: 1.2rem; font-weight: 600;">
+                                        23:10<br/>
+                                        <span style="font-size:.9rem; font-weight: 500; background-color: rgb(216, 202, 235); border-radius: 6px;padding: 2px;">SGN</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row temp1" style="text-align: center; justify-content: center; background-color: rgba(100, 148, 237, 0.322); margin: 10px;
+                            padding: 5px 10px; border-radius: 6px; position: relative;">
+                                <p class="error-btn" style="text-align:center; font-size: 1.2rem;color: var(--primary-color); cursor: pointer;"><b>Change departure flight</b></p>
+                            </div>
+                            <div class="row">
+                                <div style="font-size: 1.4rem; display:inline-block; background-color: var(--primary-color); border-radius: 50%; width: 30px;
+                                text-align: center;line-height: 30px; color: white; margin: 10px;">02</div>
+                                <div style="display: inline-block; margin-top: 10px; font-size: 1.3rem;">
+                                    <p>Sun, 13 Feb, 2022</p>
+                                    <p><b>Ho Chi Minh - Da Nang</b></p>
+                                </div>
+                            </div>
+                            <div class="row" style="background-color:#ddd; border-bottom-left-radius: 8px;border-bottom-right-radius: 8px;">
+                                <p style="font-size: 1.2rem; margin: 10px;">Subtotal<br/><span style="color: var(--secondary-color);"><b>1,322,000 vnd</b></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="contact-us-container tab-pane" style="height: calc(100vh - 60px); background-color: rgb(111, 239, 56);">
+            <div class="grid wide">
+                <div class="row" style="text-align: center;">
+                    <div class="col l-10 l-o-1 m-12 c-12 contact-us">
+                        <h3>Vạn dặm bắt đầu từ một bước chân, website này cũng vậy. Vẫn đang hoàn thiện từng ngày.<br/>Nếu có đóng góp xin vui lòng liên hệ:</h3>
+                    </div>
+                </div>
+
+                <div class="row" style="text-align: center;">
+                    <div class="col l-10 l-o-1 m-12 c-12 contact-us">
+                        <a href="tel:0962403161"><i class="ti-mobile"></i> Phone: (+84)9 6240 3161</a>
+                    </div>
+                </div>
+                <div class="row" style="text-align: center;">
+                    <div class="col l-10 l-o-1 m-12 c-12 contact-us">
+                        <a href="mailto:hisu.iced.tea@gmail.com"><i class="ti-email"></i> Email: hisu.iced.tea@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment-guide-container tab-pane" style="height: calc(100vh - 60px); background-color: rgb(11, 105, 246);">
+            <div class="grid wide">
+                <div class="row" style="text-align: center;">
+                    <div class="col l-10 l-o-1 m-12 c-12 promotion">
+                        <h3>Chức năng đang trong quá trình phát triển!!</h3>
+                        <p>&#40 Chính là như vậy đấy! <img src="./assets/img/th (1).jpg" 
+                            style="width: 60px; border-radius: 50%;position: relative; top: 10px;"> &#41</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="app__footer">
+            <div class="grid wide">
+                <div class="row connect">
+                    <div class="col l-3">
+                        <a href="tel:0962403161"><i class="ti-mobile"></i> Call us: (+84)9 6240 3161</a>
+                    </div>
+                    <div class="col l-3">
+                        <a href="mailto:hisu.iced.tea@gmail.com"><i class="ti-email"></i> Email: hisu.iced.tea@gmail.com</a>
+                    </div>
+                    <div class="col l-2 l-o-4">
+                        <p>Follow us <a href="#"><i class="ti-facebook"></i></a> <a href="#"><i class="ti-instagram"></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="error">
+        <div>
+            <p>Chức năng đang bảo trì!!</p>
+        </div>
+    </div>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

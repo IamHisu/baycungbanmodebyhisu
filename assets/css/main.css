@@ -1,0 +1,697 @@
+.app {
+    width: 100vw;
+    height: 100vh;
+    background: url(../img/plane_sunset.jpeg) top center/cover no-repeat;
+}
+/* Begin app header */
+.app__header {
+    height: var(--header-height);
+    background-color: transparent;
+}
+.app__header .menu-btn {
+    text-decoration: none;
+    color: black;
+    height: var(--header-height);
+    font-size: 2.8rem;
+    padding: 10px;
+    border-radius: 10px;
+    line-height: var(--header-height);
+}
+.app__header .menu-btn:hover {
+    cursor: pointer;
+    background-color: rgba(0,0,0,.2);
+    color: #fff;
+}
+.home-icon {
+    display: none;
+}
+
+.app__header .logo a {
+    text-decoration: none;
+    font-size: 2.0rem;
+    font-weight: 600;
+    line-height: var(--header-height);
+    color: black;
+}
+.app__header .logo img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    top: 3px;
+    cursor: pointer;
+}
+.language.language--active {
+    border: 2px solid var(--primary-color);
+}
+
+.app__header .nav ul {
+    height: var(--header-height);
+    list-style: none;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.app__header .nav ul li {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    line-height: 1.4;
+}
+.app__header .nav ul li:hover {
+    background-color: rgba(0,0,0,.2);
+    color: white;
+    cursor: pointer;
+    font-size: 1.8rem;
+}
+
+.app__header .bookingNow {
+    height: var(--header-height);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.app__header .bookingNow p:hover {
+    opacity: .7;
+}
+.app__header .bookingNow p {
+    display: inline-block;
+    background-color: var(--primary-color);
+    font-size: 1.6rem;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+body .error {
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 1001;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+body .error.active {
+    display: flex;
+}
+body .error p {
+    text-align: center;
+    font-size: 8rem;
+    line-height: 1.4;
+    font-weight: 600;
+    background-color: yellow;
+    color: red;
+    width: 600px;
+    border-radius: 30px;
+}
+/* End app header */
+
+/* Begin app container */
+.app__container .slogan {
+    margin: 100px 0;
+}
+.app__container .slogan h1{
+    flex-wrap: wrap;
+    font-size: 4.6rem;
+    line-height: 1.4;
+    font-weight: 100;
+}
+.app__container .slogan h1 span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.app__container .content {
+    margin-bottom: 80px;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 1;
+    box-shadow: 10px -10px 20px rgba(0, 0, 0, .5);
+    position: relative;
+    font-weight: 600;
+}
+.app__container .content .about {
+    margin: 10px 0;
+}
+.app__container .content .about .about-mg {
+    margin-right: 30px;
+    font-size: 1.4rem;
+    margin: 10px;
+}
+.app__container .content .about .about-mg input {
+    margin-left: 20px;
+    margin-right: 5px;
+}
+input[type="radio"] {
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+.app__container .content .about select {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 10px;
+    font-weight: 600;
+    outline: none;
+}
+
+.app__container .content .detail .from-to {
+    justify-content: space-around;
+    min-height: 68px;
+    margin-bottom: 5px;
+}
+.app__container .content .detail .from-to>div {
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 5px 5px;
+    box-shadow: 2px 2px 20px rgba(0,0,0,.2);
+}
+.app__container .content .detail .from-to>div>p {
+    padding-left: 15px;
+}
+.app__container .content .detail .days {
+    border: 1px solid var(--border-color);
+    padding: 5px 0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 20px rgba(0,0,0,.2);
+}
+.app__container .content .detail .days input {
+    height: 32px;
+    padding: 5px;
+    margin: 5px;
+    width: 100%;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.8rem;
+    border: none;
+    /* outline: none; */
+}
+
+.app__container .content .detail div h3 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding: 4px 0;
+}
+
+.from-to .dropdown {
+    position: relative;
+    width: 100%;
+}
+.from-to .dropdown::after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+    z-index: 999;
+    top: 13px;
+    right: 13px;
+    transform: rotate(45deg);
+    transition: .3s;
+    pointer-events: none;
+}
+.from-to .dropdown.active::after {
+    top: 16px;
+    transform: rotate(225deg);
+}
+.from-to .dropdown input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-shadow: 0 5px 20px rgba(0,0,0,.2);
+    padding: 12px 5px;
+    border-radius: 10px;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+.from-to .dropdown .option {
+    position: absolute;
+    top: 40px;
+    width: 120%;
+    background-color: #fff;
+    box-shadow: 10px 10px 30px rgb(0,0,0,.6);
+    border-radius: 10px;
+    z-index: 1000;
+    display: none;
+}
+.from-to .dropdown.active .option {
+    display: block;
+}
+.from-to .dropdown .option>div {
+    border-top: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.from-to .dropdown .option div:first-child {
+    border-top: none;
+}
+.from-to .dropdown .option>div:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.from-to .dropdown .option>div:hover h3 {
+    color:#fff;
+}
+
+
+.app__container .content .search-btn {
+    font-size: 1.8rem;
+    color: white;
+    background-color: var(--primary-color);
+    display: inline-block;
+    position: absolute;
+    padding: 12px;
+    border-radius: 10px;
+    bottom: 0;
+    right: 30px;
+    transform: translateY(50%);
+    cursor: pointer;
+}
+.app__container .content .search-btn:hover,
+.bookingNow p:hover {
+    background-color:blue;
+}
+/* End app container */
+
+/* Begin Tab */
+.tab-pane {
+    display: none;
+}
+.tab-pane.active {
+    display: block;
+}
+.tab-item.active:not(.tab-item.active.no-effect) {
+    background-color: rgba(0,0,0,.2);
+    color: white;
+    cursor: pointer;
+    font-size: 2rem;
+}
+/* End Tab */
+
+/* Begin Promotion */
+.promotion{
+    margin: 100px;
+}
+.promotion h3 {
+    font-size: 6rem;
+    color: white;
+    line-height: 1.4;
+}
+.promotion p {
+    font-size: 2.4rem;
+    margin-top: 32px;
+    line-height: 1.4;
+}
+/* End Promotion */
+
+/* Begin Flight Schedule */
+.flight-schedule-header {
+    background-color: #fff;
+    height: 60px;
+}
+.flight-schedule-sub-cont {
+    height: 60px;
+}
+.flight-schedule-inf div {
+    justify-content: space-between;
+}
+.exchange-fake-btn {
+    color: var(--secondary-color);
+    background-color: bisque;
+}
+.exchange-fake-btn:hover {
+    background-color: var(--secondary-color);
+    color: bisque;
+}
+.flight-schedule-inf>div>div {
+    cursor: pointer;
+    padding: 5px 10px;
+}
+.flight-schedule-sub-cont div h3 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+}
+.flight-schedule-inf div p {
+    color: #555;
+    font-size: 1rem;
+}
+
+.flight-schedule-about {
+    justify-content: space-around;
+}
+.flight-schedule-about div {
+    display:inline-block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.flight-schedule-searchbtn div {
+    background: var(--secondary-color);
+    display: inline-block;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+.flight-schedule-searchbtn div:hover {
+    opacity: .7;
+}
+.flight-schedule-searchbtn i {
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.flight-schedule-body {
+    background-color: #eee;
+    padding-top: 10px;
+}
+.flight-schedule-body .nav div {
+    display: flex;
+    justify-content: space-between;
+}
+.flight-schedule-body .nav div p {
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    border-radius: 8px;
+    width: 19.5%;
+}
+.flight-schedule-body .nav div p:not(:first-child) {
+    background-color: #fff;
+}
+
+.flight-schedule-body .flight-schedule-content {
+    border-radius: 8px;
+    background: #fff;
+    margin: 3px 0;
+    align-items: center;
+    padding: 20px 0;
+}
+.flight-schedule-body .flight-schedule-content .airlines {
+    position: relative;
+    top: -5px;
+}
+.flight-schedule-body .flight-schedule-content .airlines p {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.flight-schedule-body .flight-schedule-content .airlines img {
+    width: 22px;
+    position: relative;
+    top: 6px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.flight-schedule-body .flight-schedule-content .time div{
+    display: inline-block;
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: 600;
+}
+.flight-schedule-body .flight-schedule-content .time div:nth-child(2) p {
+    border-bottom: 2px solid var(--primary-color);
+    padding: 0 12px;
+    margin: 0 4px;
+    font-weight: 500;
+}
+.flight-schedule-body .flight-schedule-content .time span {
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: rgb(216, 202, 235);
+    border-radius: 10px;
+    padding: 2px 5px;
+}
+.flight-schedule-body .flight-schedule-content .time div:nth-child(2) span {
+    background-color: transparent;
+}
+.flight-schedule-body .flight-schedule-content .luggage p {
+    font-size: 1.2rem;
+    text-align: center;
+}
+.flight-schedule-body .flight-schedule-content .luggage span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+.flight-schedule-body .flight-schedule-content .price p:first-child {
+    font-size: 1.3rem;
+    color: #555;
+    text-decoration: line-through;
+    text-align: center;
+}
+.flight-schedule-body .flight-schedule-content .price p:last-child {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-align: center;
+}
+.flight-schedule-body .flight-schedule-content .choose-btn p {
+    font-size: 1.4rem;
+    display: inline-block;
+    color: var(--secondary-color);
+    background-color: bisque;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+.flight-schedule-body .flight-schedule-content .choose-btn p:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    cursor: pointer;
+}
+.flight-schedule-body .flight-schedule-content .details {
+    position: relative;
+}
+.flight-schedule-body .flight-schedule-content .details div {
+    display: inline-block;
+    margin: 20px 20px 0 0;
+    color: #aaa;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.flight-schedule-body .flight-schedule-content .details div:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+.flight-schedule-body .flight-schedule-content .details .active {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+}
+.flight-schedule-body .flight-schedule-content .details::after {
+    content: '';
+    display: block;
+    width: 66%;
+    position: absolute;
+    border-bottom: 1.5px solid #ddd;
+    top: 26px;
+    right: 12px;
+}
+.flight-schedule-body .flight-schedule-content .detail-item {
+    margin-top: 20px;
+    display: none;
+}
+.flight-schedule-body .flight-schedule-content .detail-item.active {
+    display: block;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-time div{
+    display: inline-block;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-time div p{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-time div span{
+    font-weight: 500;
+    color: #555;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-time div:first-child {
+    border-right: 2px solid var(--primary-color);
+    padding-right: 20px;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-time div:last-child {
+    margin-left: 20px;;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-more>div:first-child p {
+    display: inline-block;
+    font-weight: 600;
+    margin-left: 4px;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-more>div:first-child span {
+    font-weight: 500;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-more img {
+    width: 24px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-more>div:last-child div {
+    display: inline-block;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-more>div:last-child {
+    background-color: rgba(216, 202, 235, .5);
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 10px 0px 10px 0;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-more>div:last-child p {
+    font-size: 1.3rem;
+    margin: 0 15px;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-more>div:last-child span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-conditions img{
+    width: 24px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-conditions div:first-child p {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-conditions div:nth-child(2) {
+    margin-top: 15px;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-conditions div:nth-child(2) p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: inline-block;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-conditions div:nth-child(2) span {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-conditions div:nth-child(3) {
+    margin-top: 10px;
+    position: relative;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-conditions div:nth-child(3) p {
+    font-size: 1.3rem;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-conditions div:nth-child(3) span {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-conditions div:nth-child(3)::after {
+    content: '';
+    display: block;
+    box-sizing: border-box;
+    border-bottom: 2px solid var(--primary-color);
+    width: 40px;
+    position: absolute;
+    top: 8px;
+    left: 55px;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-conditions div:last-child p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-price div:last-child {
+    margin-top: 15px;
+    position: relative;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-price div:last-child::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    width: 81%;
+    background-color: transparent;
+    border: 1px solid #ccc;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-price div:last-child p {
+    display: inline-block;
+}
+.flight-schedule-body .flight-schedule-content .detail-item .detail-item-price div:last-child p:last-child {
+    margin-left: 30%;
+}
+
+.client-ticket {
+    background-color: #fff;
+    border-radius: 10px;
+}
+.your-flight {
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 15px;
+    border-bottom: 3px solid #eeeeee;
+}
+.client-ticket .temp1::after {
+    content: '';
+    display: block;
+    border-bottom: 3px solid #eeeeee;
+    position: absolute;
+    width: 110%;
+    top: 35px;
+    left: -12px;
+}
+/* End Flight Schedule */
+
+/* Begin Contact us */
+.contact-us h3 {
+    margin-top: 40px;
+    font-size: 4rem;
+    color: white;
+    line-height: 1.4;
+}
+.contact-us a {
+    text-decoration: none;
+    color: white;
+    font-size: 4rem;
+    height: 50px;
+    display: block;
+    line-height: 1.4;
+    margin-top: 40px;
+}
+.contact-us a:hover {
+    text-decoration: underline;
+}
+/* End contact us */
+
+/* Begin app footer */
+.app__footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    background-color: rgba(255,255,255,1);
+    padding: 10px 0;
+}
+.app__footer .connect {
+    height: 60px;
+    align-items: center;
+}
+
+.app__footer .connect div a,
+.app__footer .connect div p {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: black;
+}
+.app__footer .connect div a:hover {
+    text-decoration:underline;
+}
+.app__footer .connect div i {
+    color: var(--primary-color);
+}
+/* End app footer */
